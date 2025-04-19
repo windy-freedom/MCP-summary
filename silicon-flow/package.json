@@ -1,19 +1,28 @@
 {
-  "name": "silicon-flow-server",
-  "version": "0.1.0",
+  "name": "silicon-flow-mcp-server",
+  "version": "0.1.2",
   "description": "Silicon Flow MCP server for image generation",
   "type": "module",
   "main": "build/index.js",
+  "bin": {
+    "silicon-flow-server": "./build/index.js"
+  },
   "scripts": {
     "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
     "start": "node build/index.js"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^0.1.0",
+    "@modelcontextprotocol/sdk": "^1.10.1",
     "axios": "^1.6.7"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
     "typescript": "^5.3.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
